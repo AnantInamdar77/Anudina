@@ -1,134 +1,386 @@
 body {
-    font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F5F5F5;
-    color: #000;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+  color: #000;
+}
+
+.navbar {
+  background-color: #003366;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar img {
+  width: 40px;
+  height: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #003366;
+  color: white;
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  background-color: #002244;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.news-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.news-item {
+  background: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 6px solid #003366;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.news-item:hover {
+  transform: scale(1.02);
+}
+
+.news-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.news-meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.news-image {
+  width: 50%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-item {
+  display: block;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.news-detail {
+  max-width: 800px;
+  margin: 25px auto;
+  padding: 10px;
+}
+
+.back-btn {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.back-btn:hover {
+  background-color: #002244;
+}
+.sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Add these styles to your App.css file */
+
+/* Navbar Logo Styling - Make logo bigger */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #1a237e;
+color: white;
+padding: 10px 20px;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.brand {
+display: flex;
+align-items: center;
+flex: 1;
+}
+
+.full-logo {
+height: 50px; /* Increased size */
+width: auto;
+margin-right: 10px;
+padding: 5px;
+background-color: white;
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease;
+}
+
+.full-logo:hover {
+transform: scale(1.05);
+}
+
+.brand-text {
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+/* Initial Logo Animation */
+.logo-animation {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #1a237e;
+z-index: 1000;
+animation: fadeOut 0.5s ease 2s forwards;
+}
+
+.animated-logo {
+width: 150px;
+height: auto;
+animation: logoAnimation 2s ease-in-out;
+margin-bottom: 20px;
+background-color: white;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.animated-title {
+color: white;
+font-size: 2.5rem;
+animation: titleAnimation 2s ease-in-out;
+text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeOut {
+from { opacity: 1; visibility: visible; }
+to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes logoAnimation {
+0% { transform: scale(0.1); opacity: 0; }
+50% { transform: scale(1.2); opacity: 1; }
+100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes titleAnimation {
+0% { transform: translateY(50px); opacity: 0; }
+70% { transform: translateY(-10px); opacity: 0.7; }
+100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.full-logo {
+  height: 40px;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+}
+
+.animated-logo {
+  width: 120px;
+}
+
+.animated-title {
+  font-size: 2rem;
+}
+}
+
+@media (max-width: 480px) {
+.full-logo {
+  height: 35px;
+}
+
+.brand-text {
+  font-size: 1rem;
+}
+
+.animated-logo {
+  width: 100px;
+}
+
+.animated-title {
+  font-size: 1.8rem;
+}
+}   
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.news-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+  transform: scale(1.02);
+}
+
+.news-card-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.news-card-content {
+  flex: 1;
+}
+
+.news-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.news-meta {
+  font-size: 14px;
+  color: #555;
+}
+
+.news-detail-container {
+  padding: 20px;
+}
+
+.news-detail-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.news-detail-image {
+  max-width: 100%;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.news-content {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .news-detail-content {
+    flex-wrap: nowrap;
   }
-  
-  .navbar {
-    background-color: #003366;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
+
+  .news-detail-image {
+    width: 50%;
   }
-  
-  .navbar img {
-    width: 40px;
-    height: 40px;
+
+  .news-detail-content > div:last-child {
+    flex: 1;
   }
-  
-  .brand {
-    display: flex;
-    align-items: center;
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    flex-direction: column;
   }
-  
-  .menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .sidebar {
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    background-color: #003366;
-    color: white;
-    padding-top: 20px;
-    transition: 0.3s;
-  }
-  
-  .sidebar.show {
-    left: 0;
-  }
-  
-  .sidebar a {
-    display: block;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .sidebar a:hover {
-    background-color: #002244;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .news-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px;
-  }
-  
-  .news-item {
-    background: white;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 6px solid #003366;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  
-  .news-item:hover {
-    transform: scale(1.02);
-  }
-  
-  .news-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #003366;
-  }
-  
-  .news-meta {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .news-image {
+
+  .news-card-image {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    margin-right: 0;
     margin-bottom: 10px;
   }
-  
-  .news-detail {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px;
-  }
-  
-  .back-btn {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-  }
-  
-  .back-btn:hover {
-    background-color: #002244;
-  }
-  
+}
+
