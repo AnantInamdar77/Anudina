@@ -72,7 +72,7 @@ const NewsList = ({ news }) => (
         <div className="news-meta">{item.meta}</div>
         <img
           className="news-image"
-          src={`http://localhost:5000/uploads/${item.image}`}
+          src={`https://anudina-1.onrender.com/uploads/${item.image}`}
           alt="News"
         />
       </Link>
@@ -94,7 +94,7 @@ const NewsDetail = ({ news }) => {
       <div className="news-meta">{newsItem.meta}</div>
       <img
         className="news-image"
-        src={`http://localhost:5000/uploads/${newsItem.image}`}
+        src={`https://anudina-1.onrender.com/uploads/${newsItem.image}`}
         alt="News"
       />
       <div className="news-content">{newsItem.content}</div>
@@ -177,7 +177,7 @@ const App = () => {
 
   const handleLogin = () => {
     setError(null);
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'GaneshAI_Admin@anudina' && password === 'Abhay@179') {
       localStorage.setItem('adminLoggedIn', 'true');
       setIsAuthenticated(true);
       setUsername('');
